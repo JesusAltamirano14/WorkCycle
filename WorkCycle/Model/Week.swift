@@ -6,3 +6,8 @@
 //
 
 import Foundation
+
+struct WeekDay: Identifiable {
+    var id: String = UUID().uuidString
+    var date: Date
+}

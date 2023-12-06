@@ -7,20 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0091B17A2B16934100523753 /* DateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091B1792B16934100523753 /* DateViewModel.swift */; };
+		0091B17C2B1693AA00523753 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091B17B2B1693AA00523753 /* Week.swift */; };
+		0091B17E2B1693FC00523753 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091B17D2B1693FC00523753 /* TaskItem.swift */; };
+		0091B1802B16942A00523753 /* ExtensionDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091B17F2B16942A00523753 /* ExtensionDate.swift */; };
+		0091B1822B16944E00523753 /* PreferenceKeySize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091B1812B16944E00523753 /* PreferenceKeySize.swift */; };
+		0091B1842B1694B000523753 /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091B1832B1694B000523753 /* DateView.swift */; };
+		0091B1862B1694ED00523753 /* TaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091B1852B1694ED00523753 /* TaskView.swift */; };
+		0091B1882B16953D00523753 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091B1872B16953D00523753 /* HomeView.swift */; };
+		0091B18A2B16956100523753 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091B1892B16956100523753 /* CounterView.swift */; };
+		0091B18C2B16957C00523753 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091B18B2B16957C00523753 /* SheetView.swift */; };
+		0091B18E2B1695A400523753 /* EditWorkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091B18D2B1695A400523753 /* EditWorkView.swift */; };
 		009996912B1691AE00EDDBC9 /* WorkCycleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009996902B1691AE00EDDBC9 /* WorkCycleApp.swift */; };
-		009996932B1691AE00EDDBC9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009996922B1691AE00EDDBC9 /* ContentView.swift */; };
-		009996952B1691AE00EDDBC9 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009996942B1691AE00EDDBC9 /* Item.swift */; };
 		009996972B1691AF00EDDBC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 009996962B1691AF00EDDBC9 /* Assets.xcassets */; };
 		0099969A2B1691AF00EDDBC9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 009996992B1691AF00EDDBC9 /* Preview Assets.xcassets */; };
+		00E989782B204E8300A4E5DC /* ExtensionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E989772B204E8300A4E5DC /* ExtensionColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0091B1792B16934100523753 /* DateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewModel.swift; sourceTree = "<group>"; };
+		0091B17B2B1693AA00523753 /* Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week.swift; sourceTree = "<group>"; };
+		0091B17D2B1693FC00523753 /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
+		0091B17F2B16942A00523753 /* ExtensionDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDate.swift; sourceTree = "<group>"; };
+		0091B1812B16944E00523753 /* PreferenceKeySize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceKeySize.swift; sourceTree = "<group>"; };
+		0091B1832B1694B000523753 /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
+		0091B1852B1694ED00523753 /* TaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskView.swift; sourceTree = "<group>"; };
+		0091B1872B16953D00523753 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		0091B1892B16956100523753 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		0091B18B2B16957C00523753 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
+		0091B18D2B1695A400523753 /* EditWorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkView.swift; sourceTree = "<group>"; };
 		0099968D2B1691AE00EDDBC9 /* WorkCycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkCycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		009996902B1691AE00EDDBC9 /* WorkCycleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkCycleApp.swift; sourceTree = "<group>"; };
-		009996922B1691AE00EDDBC9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		009996942B1691AE00EDDBC9 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		009996962B1691AF00EDDBC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		009996992B1691AF00EDDBC9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		00E989772B204E8300A4E5DC /* ExtensionColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,6 +54,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0091B1732B1692F400523753 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				0091B17D2B1693FC00523753 /* TaskItem.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		0091B1752B1692FE00523753 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0091B17F2B16942A00523753 /* ExtensionDate.swift */,
+				0091B1812B16944E00523753 /* PreferenceKeySize.swift */,
+				00E989772B204E8300A4E5DC /* ExtensionColor.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		0091B1762B16930200523753 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0091B17B2B1693AA00523753 /* Week.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0091B1772B16930700523753 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0091B1792B16934100523753 /* DateViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0091B1782B16930D00523753 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				009996902B1691AE00EDDBC9 /* WorkCycleApp.swift */,
+				0091B1832B1694B000523753 /* DateView.swift */,
+				0091B1852B1694ED00523753 /* TaskView.swift */,
+				0091B1872B16953D00523753 /* HomeView.swift */,
+				0091B1892B16956100523753 /* CounterView.swift */,
+				0091B18B2B16957C00523753 /* SheetView.swift */,
+				0091B18D2B1695A400523753 /* EditWorkView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		009996842B1691AE00EDDBC9 = {
 			isa = PBXGroup;
 			children = (
@@ -53,9 +121,11 @@
 		0099968F2B1691AE00EDDBC9 /* WorkCycle */ = {
 			isa = PBXGroup;
 			children = (
-				009996902B1691AE00EDDBC9 /* WorkCycleApp.swift */,
-				009996922B1691AE00EDDBC9 /* ContentView.swift */,
-				009996942B1691AE00EDDBC9 /* Item.swift */,
+				0091B1782B16930D00523753 /* View */,
+				0091B1772B16930700523753 /* ViewModel */,
+				0091B1762B16930200523753 /* Model */,
+				0091B1752B1692FE00523753 /* Helpers */,
+				0091B1732B1692F400523753 /* Data */,
 				009996962B1691AF00EDDBC9 /* Assets.xcassets */,
 				009996982B1691AF00EDDBC9 /* Preview Content */,
 			);
@@ -140,9 +210,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				009996932B1691AE00EDDBC9 /* ContentView.swift in Sources */,
-				009996952B1691AE00EDDBC9 /* Item.swift in Sources */,
+				0091B1882B16953D00523753 /* HomeView.swift in Sources */,
+				0091B18E2B1695A400523753 /* EditWorkView.swift in Sources */,
+				0091B17A2B16934100523753 /* DateViewModel.swift in Sources */,
+				0091B1802B16942A00523753 /* ExtensionDate.swift in Sources */,
+				0091B1842B1694B000523753 /* DateView.swift in Sources */,
+				0091B17E2B1693FC00523753 /* TaskItem.swift in Sources */,
+				00E989782B204E8300A4E5DC /* ExtensionColor.swift in Sources */,
+				0091B18C2B16957C00523753 /* SheetView.swift in Sources */,
+				0091B17C2B1693AA00523753 /* Week.swift in Sources */,
+				0091B1822B16944E00523753 /* PreferenceKeySize.swift in Sources */,
 				009996912B1691AE00EDDBC9 /* WorkCycleApp.swift in Sources */,
+				0091B1862B1694ED00523753 /* TaskView.swift in Sources */,
+				0091B18A2B16956100523753 /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,11 +359,13 @@
 				DEVELOPMENT_TEAM = N32W554TWR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -308,11 +390,13 @@
 				DEVELOPMENT_TEAM = N32W554TWR;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleLightContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

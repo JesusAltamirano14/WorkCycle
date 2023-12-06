@@ -9,10 +9,22 @@ import SwiftUI
 
 struct HomeView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView {
+            DateView()
+                .tabItem {
+                    Text("Home")
+                    Image(systemName: "house")
+                }
+            CounterView()
+                .tabItem {
+                    Text("Calculate")
+                    Image(systemName: "number")
+                }
+        }
     }
 }
 
 #Preview {
     HomeView()
+        .modelContainer(for: TaskItem.self)
 }
