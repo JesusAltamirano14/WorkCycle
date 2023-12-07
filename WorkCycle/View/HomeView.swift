@@ -8,12 +8,18 @@
 import SwiftUI
 
 struct HomeView: View {
+    @AppStorage("colorTheme") private var colorHex: String = "00CC00"
+    
     var body: some View {
         TabView {
+            TimerView()
+                .tabItem {
+                    Label("Timer", systemImage: "timer")
+                }
             DateView()
                 .tabItem {
-                    Text("Home")
-                    Image(systemName: "house")
+                    Text("Calendar")
+                    Image(systemName: "calendar")
                 }
             CounterView()
                 .tabItem {
@@ -21,6 +27,7 @@ struct HomeView: View {
                     Image(systemName: "number")
                 }
         }
+        .accentColor(Color(hex: colorHex))
     }
 }
 

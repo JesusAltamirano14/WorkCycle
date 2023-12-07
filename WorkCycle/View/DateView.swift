@@ -75,9 +75,9 @@ struct DateView: View {
                             .frame(width: 50, height: 50)
                             .padding(.trailing)
                             .foregroundStyle(colorSaved)
-                        Image(systemName: "plus.circle")
+                        Image(systemName: "plus")
                             .resizable()
-                            .frame(width: 50, height: 50)
+                            .frame(width: 25, height: 25)
                             .padding(.trailing)
                             .foregroundStyle(.white)
                     }
