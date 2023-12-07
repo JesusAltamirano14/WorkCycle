@@ -26,6 +26,7 @@ struct CounterView: View {
     
     var body: some View {
         NavigationStack{
+            if !taskItems.isEmpty {
                 List {
                     Section(header: Text("Works to be counted")){
                         ForEach(taskItems) { task in
@@ -103,6 +104,7 @@ struct CounterView: View {
                         }
                     }
                 }
+            }
         }
         .overlay {
             if taskItems.isEmpty {
@@ -113,9 +115,12 @@ struct CounterView: View {
                     VStack(alignment:.leading){
                         Text("This section is empty")
                             .font(.footnote)
+                            .fontWeight(.semibold)
+                        Text("Add jobs in calendar to appear here")
+                            .font(.footnote)
                             .foregroundStyle(.secondary)
-                        Text("Add jobs to appear here")
-                            .font(.callout)
+
+
 
                     }
                 }
