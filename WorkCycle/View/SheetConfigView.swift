@@ -90,9 +90,11 @@ struct ConfigViewSecond: View {
             }
             .onChange(of: nameField) { oldValue, newValue in
                 workVM.saveNameIntoStorage(type: typeOfWork, nameToSave: newValue)
+                HapticManager.instance.impactVibrate(style: .soft)
             }
             .onChange(of: priceSlider) { oldValue, newValue in
                 workVM.savePriceIntoStorage(type: typeOfWork, priceToSave: newValue)
+                HapticManager.instance.impactVibrate(style: .medium)
             }
     }
 }

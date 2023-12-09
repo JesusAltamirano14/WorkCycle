@@ -29,6 +29,8 @@ struct ColorPickerWork: View {
                             .frame(width: 50, height: 50)
                             .onTapGesture {
                                 typeOfWork = type
+                                //Vibration
+                                HapticManager.instance.impactVibrate(style: .rigid)
                             }
                     }
                 }

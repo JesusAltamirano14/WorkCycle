@@ -81,7 +81,7 @@ struct SheetView: View {
                     .foregroundStyle(.black)
                     .background(
                         RoundedRectangle(cornerRadius: 10)
-                            .fill(Color(hex:workItem.typeOfWork.rawValue))
+                            .fill(Color(hex:workVM.getColor(type: workItem.typeOfWork)))
                     )
             })
             .padding(.top, 22)

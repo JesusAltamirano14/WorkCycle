@@ -10,18 +10,7 @@ import SwiftUI
 struct EditWorkView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
-    
-//    var taskItem: TaskItem
-//    @State var selectedEntryHour: Date
-//    @State var selectedExitHour: Date
-//    @State private var selectedType: TypeOfWork
-//    
-//    init(taskItem: TaskItem) {
-//        self.taskItem = taskItem
-//        self._selectedEntryHour = State(initialValue: taskItem.entryHour)
-//        self._selectedExitHour = State(initialValue: taskItem.exitHour)
-//        self._selectedType = State(initialValue: taskItem.typeOfWork)
-//    }
+    @EnvironmentObject var workVM: WorkViewModel
     
     @Bindable var workItem: TaskItem
     
@@ -50,7 +39,7 @@ struct EditWorkView: View {
                     .foregroundStyle(.black)
                     .background(
                         RoundedRectangle(cornerRadius: 10)
-                            .fill(Color(hex:workItem.typeOfWork.rawValue))
+                            .fill(Color(hex:workVM.getColor(type: workItem.typeOfWork)))
                     )
             })
             .padding(.top, 22)

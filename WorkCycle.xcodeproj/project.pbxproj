@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0046AE7D2B244D0F000DDDCB /* HapticManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0046AE7C2B244D0F000DDDCB /* HapticManager.swift */; };
 		0091B17A2B16934100523753 /* DateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091B1792B16934100523753 /* DateViewModel.swift */; };
 		0091B17C2B1693AA00523753 /* Week.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091B17B2B1693AA00523753 /* Week.swift */; };
 		0091B17E2B1693FC00523753 /* TaskItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091B17D2B1693FC00523753 /* TaskItem.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0046AE7C2B244D0F000DDDCB /* HapticManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HapticManager.swift; sourceTree = "<group>"; };
 		0091B1792B16934100523753 /* DateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewModel.swift; sourceTree = "<group>"; };
 		0091B17B2B1693AA00523753 /* Week.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Week.swift; sourceTree = "<group>"; };
 		0091B17D2B1693FC00523753 /* TaskItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskItem.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				0091B17F2B16942A00523753 /* ExtensionDate.swift */,
+				0046AE7C2B244D0F000DDDCB /* HapticManager.swift */,
 				0091B1812B16944E00523753 /* PreferenceKeySize.swift */,
 				00E989772B204E8300A4E5DC /* ExtensionColor.swift */,
 			);
@@ -245,6 +248,7 @@
 				0091B1882B16953D00523753 /* HomeView.swift in Sources */,
 				0091B18E2B1695A400523753 /* EditWorkView.swift in Sources */,
 				0091B17A2B16934100523753 /* DateViewModel.swift in Sources */,
+				0046AE7D2B244D0F000DDDCB /* HapticManager.swift in Sources */,
 				0091B1802B16942A00523753 /* ExtensionDate.swift in Sources */,
 				0091B1842B1694B000523753 /* DateView.swift in Sources */,
 				00E9898A2B2296E000A4E5DC /* WorkViewModel.swift in Sources */,

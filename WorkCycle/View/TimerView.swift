@@ -73,6 +73,8 @@ struct TimerView: View {
                             if timerVM.timer == nil {
                                 timerVM.startTimer()
                             }
+                            //Vibration
+                            HapticManager.instance.notificationVibrate(type: .success)
                         }
                         .buttonStyle(.borderedProminent)
                         .tint(.green)
@@ -107,8 +109,9 @@ struct TimerView: View {
                             timerVM.remainingTime = 0
                             timerVM.progressRing = 0
                             
-                            //New instance is created in order to permit save other TaskItem
-                            workItem = TaskItem()
+                            //New instance is created in order to permit save other TaskItem and mantain the previous TypeOfWork
+                            workItem = TaskItem(typeOfWork: workItem.typeOfWork)
+                            HapticManager.instance.notificationVibrate(type: .error)
                         }, label: {
                             Text("EXIT")
                                 .foregroundStyle(.white)

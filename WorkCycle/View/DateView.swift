@@ -63,6 +63,8 @@ struct DateView: View {
             .overlay(alignment: .bottomTrailing) {
                 Button(action: {
                     sheetIsPresented = true
+                    //Vibration
+                    HapticManager.instance.impactVibrate(style: .rigid)
                 }, label: {
                     ZStack{
                         Circle()
@@ -141,6 +143,8 @@ struct DateView: View {
                 .onTapGesture {
                     withAnimation(.snappy) {
                         dateVM.currentDate = weekday.date
+                        //Vibration per every change
+                        HapticManager.instance.impactVibrate(style: .soft)
                     }
                 }
             }

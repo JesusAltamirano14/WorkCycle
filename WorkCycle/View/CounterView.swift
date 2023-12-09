@@ -63,6 +63,8 @@ struct CounterView: View {
                         })
                     }
                 }
+                
+                //MARK: SECTION INFORMATION
                 VStack(alignment:.leading, spacing:2){
                     Text("Information")
                         .font(.callout)
@@ -71,7 +73,10 @@ struct CounterView: View {
                         Text(sumHoursAndMinutes(records:taskItems))
                         Spacer()
                     }
+                    //Mount
                     Text(String(format:"%.2f $",workVM.calculateMount(taskItems: taskItems)))
+                        .font(.title2)
+                        .fontWeight(.semibold)
                     Button {
                         if !taskItems.isEmpty {
                             for task in taskItems {
@@ -79,8 +84,12 @@ struct CounterView: View {
                                 task.phaseId = 3
                             }
                         }
+                        //Vibration
+                        HapticManager.instance.notificationVibrate(type: .success)
                     } label: {
-                        Text("Save")
+                        Text("SAVE")
+                            .font(.footnote)
+                            .fontWeight(.bold)
                             .frame(width: 100)
                     }
                     .frame(maxWidth: .infinity, alignment: .center)
@@ -115,9 +124,6 @@ struct CounterView: View {
                         Text("Add jobs in calendar to appear here")
                             .font(.footnote)
                             .foregroundStyle(.secondary)
-
-
-
                     }
                 }
 
