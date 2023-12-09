@@ -11,15 +11,33 @@ struct SheetView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
     
-    var currentDate: Date
+    @EnvironmentObject private var workVM: WorkViewModel
+    
+    var currentDateSelected: Date
+    
+    //Init a workItem Data
     @State private var workItem: TaskItem
-    init(currentDate: Date) {
-        self.currentDate = currentDate
-        self._workItem = State(initialValue: TaskItem(entryHour: self.currentDate, exitHour: self.currentDate))
+    
+    
+    init(currentDateSelected: Date) {
+        
+        //Pick the currentDate selected by the Sheet and use the hours and minutes instantanious
+        let calendar = Calendar.current
+        let components1 = calendar.dateComponents([.year,.month,.day], from: currentDateSelected)
+        let components2 = calendar.dateComponents([.hour,.minute], from: Date())
+        var combinedComponents = DateComponents()
+        combinedComponents.year = components1.year
+        combinedComponents.month = components1.month
+        combinedComponents.day = components1.day
+        combinedComponents.hour = components2.hour
+        combinedComponents.minute = components2.minute
+        
+        self.currentDateSelected = calendar.date(from: combinedComponents) ?? currentDateSelected
+        self._workItem = State(initialValue: TaskItem(entryHour: self.currentDateSelected, exitHour: self.currentDateSelected))
     }
     
     private var startOfDay: Date {
-        return Calendar.current.startOfDay(for: currentDate)
+        return Calendar.current.startOfDay(for: currentDateSelected)
     }
     
     var body: some View {
@@ -38,32 +56,13 @@ struct SheetView: View {
             
             //MARK: TITTLE
             
-            Text(currentDate.formatDate(template: "MMMM dd"))
+            Text(currentDateSelected.formatDate(template: "MMMM dd"))
                 .font(.title)
             
             //MARK: COLORS
             
-            VStack(alignment: .leading){
-                Text(workItem.typeOfWork.descr)
-                    .foregroundStyle(.secondary)
-                HStack{
-                    ForEach(TypeOfWork.allCases, id: \.self) { type in
-                        ZStack{
-                            if type ==  workItem.typeOfWork{
-                                Circle()
-                                    .frame(width: 52, height: 52)
-                            }
-//
-                            Color(type.rawValue)
-                                .clipShape(Circle())
-                                .frame(width: 50, height: 50)
-                                .onTapGesture {
-                                    workItem.typeOfWork = type
-                                }
-                        }
-                    }
-                }
-            }
+            ColorPickerWork(typeOfWork: $workItem.typeOfWork, withPrice: false)
+            
             //MARK: SELECT HOURS
             
             DatePicker("entry", selection: $workItem.entryHour, in: startOfDay..., displayedComponents: .hourAndMinute)
@@ -71,7 +70,6 @@ struct SheetView: View {
             
             //MARK: BUTTON TO SAVE WORKS
             Button(action: {
-//                let taskItem: TaskItem = TaskItem(entryHour: entryHour, exitHour: exitHour, typeOfWork: selectedType)
                 modelContext.insert(workItem)
                 dismiss()
             }, label: {
@@ -83,18 +81,18 @@ struct SheetView: View {
                     .foregroundStyle(.black)
                     .background(
                         RoundedRectangle(cornerRadius: 10)
-                            .fill(Color(workItem.typeOfWork.rawValue))
+                            .fill(Color(hex:workItem.typeOfWork.rawValue))
                     )
             })
             .padding(.top, 22)
             Spacer()
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
         .padding()
     }
 }
 
 #Preview {
-    SheetView(currentDate: Date.now)
+    SheetView(currentDateSelected: Date.now)
         .modelContainer(for: TaskItem.self)
+        .environmentObject(WorkViewModel())
 }

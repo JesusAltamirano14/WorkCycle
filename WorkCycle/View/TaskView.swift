@@ -17,6 +17,8 @@ struct TaskView: View {
     
     @State private var selectedItems: Set<String> = []
     
+    @EnvironmentObject private var workVM: WorkViewModel
+    
     init(currentDate: Date) {
         self.currentDate = currentDate
         
@@ -47,11 +49,11 @@ struct TaskView: View {
                                     .background {
                                         Circle()
                                             .frame(width: 15, height: 15)
-                                            .foregroundColor(Color(task.typeOfWork.rawValue))
+                                            .foregroundColor(Color(hex:workVM.getColor(type: task.typeOfWork)))
                                     }
                                 VStack(alignment:.leading, spacing: 6){
                                     HStack{
-                                        Text(task.typeOfWork.descr)
+                                        Text(workVM.getName(type: task.typeOfWork))
                                             .strikethrough(task.phase == .phase3 ? true : false, color: .black)
                                             .fontWeight(.bold)
                                         Spacer()
@@ -73,17 +75,30 @@ struct TaskView: View {
                                         }
                                     }
                                     .frame(maxWidth: .infinity)
-                                    Text(task.entryHour.formatDate(template: "MMMM dd"))
-                                    Text("\(task.entryHour.formatDate(template: "hh:mm a")) - \(task.exitHour.formatDate(template: "hh:mm a"))")
                                     HStack{
-                                        Image(systemName: "timer")
-                                        Text(task.entryHour.calculateTime(to: task.exitHour))
+                                        VStack(alignment:.leading){
+                                            Text(task.entryHour.formatDate(template: "MMMM dd"))
+                                            Text("\(task.entryHour.formatDate(template: "hh:mm a")) - \(task.exitHour.formatDate(template: "hh:mm a"))")
+                                            HStack{
+                                                Image(systemName: "timer")
+                                                Text(task.entryHour.calculateTime(to: task.exitHour))
+                                            }
+                                        }
+                                        Spacer()
+                                        VStack(alignment:.trailing){
+                                            Text(String(format:"%.2f $",workVM.getPrice(type: task.typeOfWork)))
+                                                .font(.callout)
+                                                .fontWeight(.semibold)
+                                            Text("/ HOUR")
+                                                .font(.footnote)
+                                                .foregroundStyle(.secondary)
+                                        }
                                     }
                                 }
                                 .font(.callout)
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(8)
-                                .background(Color(task.typeOfWork.rawValue))
+                                .background(Color(hex:workVM.getColor(type: task.typeOfWork)))
                                 .clipShape(RoundedRectangle(cornerRadius: 10))
                             }
                         }
@@ -128,4 +143,5 @@ struct TaskView: View {
 #Preview {
     TaskView(currentDate: Date.now)
         .modelContainer(for: TaskItem.self)
+        .environmentObject(WorkViewModel())
 }

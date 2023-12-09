@@ -23,12 +23,6 @@ struct DateView: View {
     
     @State private var offset: CGFloat = 0.0
     @AppStorage("colorTheme") private var colorTheme = "#00CC00"
-    @State private var colorSaved: Color
-    
-    init(){
-        self._colorTheme = AppStorage(wrappedValue: "00CC00", "colorTheme")
-        self._colorSaved = State(initialValue: Color(hex: _colorTheme.wrappedValue))
-    }
 
     var body: some View {
         NavigationStack{
@@ -61,7 +55,7 @@ struct DateView: View {
                     
                 Spacer()
                     .sheet(isPresented: $sheetIsPresented, content: {
-                        SheetView(currentDate: dateVM.currentDate)
+                        SheetView(currentDateSelected: dateVM.currentDate)
                             .presentationDetents([.medium])
                     })
                     
@@ -74,7 +68,7 @@ struct DateView: View {
                         Circle()
                             .frame(width: 50, height: 50)
                             .padding(.trailing)
-                            .foregroundStyle(colorSaved)
+                            .foregroundStyle(Color(hex: colorTheme))
                         Image(systemName: "plus")
                             .resizable()
                             .frame(width: 25, height: 25)
@@ -88,9 +82,6 @@ struct DateView: View {
             .navigationDestination(for: TaskItem.self, destination: { taskItem in
                 EditWorkView(workItem: taskItem)
             })
-            .onChange(of: colorSaved) { oldValue, newValue in
-                colorTheme = newValue.toHex() ?? "#00CC00"
-            }
         }
     }
     
@@ -99,7 +90,7 @@ struct DateView: View {
         HStack{
             VStack{
                 Text(dateVM.currentDate.formatDate(template: "yyyy"))
-                    .foregroundStyle(colorSaved)
+                    .foregroundStyle(Color(hex: colorTheme))
                     .fontWeight(.bold)
                 .font(.title)
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -109,10 +100,6 @@ struct DateView: View {
                     .padding(.horizontal)
             }
             Spacer()
-            
-            //Select the theme color
-            ColorPicker("", selection: $colorSaved)
-                .padding(.trailing)
         }
     }
     
@@ -135,19 +122,17 @@ struct DateView: View {
                 .foregroundStyle(weekday.date.isTheSameDay(to: dateVM.currentDate) ? .white : .black)
                 .background{
                     Capsule()
-                        .stroke(colorSaved, lineWidth: 1)
+                        .stroke(Color(hex: colorTheme), lineWidth: 1)
                     
                     //Secondary color
                     if weekday.date.isTheSameDay(to: today) {
                         Capsule()
-//                            .fill(Color(#colorLiteral(red: 0, green: 0.80, blue: 0, alpha: 1)).opacity(0.25))
-                            .fill(colorSaved.secondary.secondary)
+                            .fill(Color(hex: colorTheme).secondary.secondary)
                     }
                     //Principal Color - Stronght color
                     if weekday.date.isTheSameDay(to: dateVM.currentDate) {
                         Capsule()
-//                            .fill(Color(#colorLiteral(red: 0, green: 0.60, blue: 0, alpha: 1)))
-                            .fill(colorSaved)
+                            .fill(Color(hex: colorTheme))
                             .matchedGeometryEffect(id: "effect2", in: animation)
                             
 
@@ -183,4 +168,5 @@ struct DateView: View {
 #Preview {
     DateView()
         .modelContainer(for: TaskItem.self)
+        .environmentObject(WorkViewModel())
 }

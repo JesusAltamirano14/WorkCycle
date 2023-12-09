@@ -18,12 +18,16 @@
 		0091B18A2B16956100523753 /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091B1892B16956100523753 /* CounterView.swift */; };
 		0091B18C2B16957C00523753 /* SheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091B18B2B16957C00523753 /* SheetView.swift */; };
 		0091B18E2B1695A400523753 /* EditWorkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0091B18D2B1695A400523753 /* EditWorkView.swift */; };
+		0093C60C2B23B05900E79BE5 /* ColorPickerWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0093C60B2B23B05900E79BE5 /* ColorPickerWork.swift */; };
 		009996912B1691AE00EDDBC9 /* WorkCycleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 009996902B1691AE00EDDBC9 /* WorkCycleApp.swift */; };
 		009996972B1691AF00EDDBC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 009996962B1691AF00EDDBC9 /* Assets.xcassets */; };
 		0099969A2B1691AF00EDDBC9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 009996992B1691AF00EDDBC9 /* Preview Assets.xcassets */; };
 		00E989782B204E8300A4E5DC /* ExtensionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E989772B204E8300A4E5DC /* ExtensionColor.swift */; };
 		00E989802B2240AF00A4E5DC /* TimerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E9897F2B2240AF00A4E5DC /* TimerViewModel.swift */; };
 		00E989822B2240DE00A4E5DC /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E989812B2240DE00A4E5DC /* TimerView.swift */; };
+		00E989862B22530C00A4E5DC /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = 00E989852B22530C00A4E5DC /* Localizable.xcstrings */; };
+		00E989882B22687700A4E5DC /* SheetConfigView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E989872B22687700A4E5DC /* SheetConfigView.swift */; };
+		00E9898A2B2296E000A4E5DC /* WorkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00E989892B2296E000A4E5DC /* WorkViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +42,7 @@
 		0091B1892B16956100523753 /* CounterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
 		0091B18B2B16957C00523753 /* SheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetView.swift; sourceTree = "<group>"; };
 		0091B18D2B1695A400523753 /* EditWorkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditWorkView.swift; sourceTree = "<group>"; };
+		0093C60B2B23B05900E79BE5 /* ColorPickerWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorPickerWork.swift; sourceTree = "<group>"; };
 		0099968D2B1691AE00EDDBC9 /* WorkCycle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkCycle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		009996902B1691AE00EDDBC9 /* WorkCycleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkCycleApp.swift; sourceTree = "<group>"; };
 		009996962B1691AF00EDDBC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +50,9 @@
 		00E989772B204E8300A4E5DC /* ExtensionColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionColor.swift; sourceTree = "<group>"; };
 		00E9897F2B2240AF00A4E5DC /* TimerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewModel.swift; sourceTree = "<group>"; };
 		00E989812B2240DE00A4E5DC /* TimerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		00E989852B22530C00A4E5DC /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		00E989872B22687700A4E5DC /* SheetConfigView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetConfigView.swift; sourceTree = "<group>"; };
+		00E989892B2296E000A4E5DC /* WorkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +97,7 @@
 			children = (
 				0091B1792B16934100523753 /* DateViewModel.swift */,
 				00E9897F2B2240AF00A4E5DC /* TimerViewModel.swift */,
+				00E989892B2296E000A4E5DC /* WorkViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -104,8 +113,17 @@
 				0091B18B2B16957C00523753 /* SheetView.swift */,
 				0091B18D2B1695A400523753 /* EditWorkView.swift */,
 				00E989812B2240DE00A4E5DC /* TimerView.swift */,
+				00E989872B22687700A4E5DC /* SheetConfigView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		0093C60A2B23B03700E79BE5 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				0093C60B2B23B05900E79BE5 /* ColorPickerWork.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		009996842B1691AE00EDDBC9 = {
@@ -127,6 +145,7 @@
 		0099968F2B1691AE00EDDBC9 /* WorkCycle */ = {
 			isa = PBXGroup;
 			children = (
+				0093C60A2B23B03700E79BE5 /* Components */,
 				0091B1782B16930D00523753 /* View */,
 				0091B1772B16930700523753 /* ViewModel */,
 				0091B1762B16930200523753 /* Model */,
@@ -134,6 +153,7 @@
 				0091B1732B1692F400523753 /* Data */,
 				009996962B1691AF00EDDBC9 /* Assets.xcassets */,
 				009996982B1691AF00EDDBC9 /* Preview Content */,
+				00E989852B22530C00A4E5DC /* Localizable.xcstrings */,
 			);
 			path = WorkCycle;
 			sourceTree = "<group>";
@@ -188,6 +208,8 @@
 			knownRegions = (
 				en,
 				Base,
+				"es-419",
+				es,
 			);
 			mainGroup = 009996842B1691AE00EDDBC9;
 			productRefGroup = 0099968E2B1691AE00EDDBC9 /* Products */;
@@ -206,6 +228,7 @@
 			files = (
 				0099969A2B1691AF00EDDBC9 /* Preview Assets.xcassets in Resources */,
 				009996972B1691AF00EDDBC9 /* Assets.xcassets in Resources */,
+				00E989862B22530C00A4E5DC /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +239,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0093C60C2B23B05900E79BE5 /* ColorPickerWork.swift in Sources */,
 				00E989822B2240DE00A4E5DC /* TimerView.swift in Sources */,
 				00E989802B2240AF00A4E5DC /* TimerViewModel.swift in Sources */,
 				0091B1882B16953D00523753 /* HomeView.swift in Sources */,
@@ -223,9 +247,11 @@
 				0091B17A2B16934100523753 /* DateViewModel.swift in Sources */,
 				0091B1802B16942A00523753 /* ExtensionDate.swift in Sources */,
 				0091B1842B1694B000523753 /* DateView.swift in Sources */,
+				00E9898A2B2296E000A4E5DC /* WorkViewModel.swift in Sources */,
 				0091B17E2B1693FC00523753 /* TaskItem.swift in Sources */,
 				00E989782B204E8300A4E5DC /* ExtensionColor.swift in Sources */,
 				0091B18C2B16957C00523753 /* SheetView.swift in Sources */,
+				00E989882B22687700A4E5DC /* SheetConfigView.swift in Sources */,
 				0091B17C2B1693AA00523753 /* Week.swift in Sources */,
 				0091B1822B16944E00523753 /* PreferenceKeySize.swift in Sources */,
 				009996912B1691AE00EDDBC9 /* WorkCycleApp.swift in Sources */,

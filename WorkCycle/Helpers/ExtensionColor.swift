@@ -45,7 +45,7 @@ extension Color {
         return color
     }
     
-    func toHex() -> String? {
+    func toHex() -> String {
         let uiColor = UIColor(self)
         
         var red: CGFloat = 0

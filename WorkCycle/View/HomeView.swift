@@ -26,6 +26,10 @@ struct HomeView: View {
                     Text("Calculate")
                     Image(systemName: "number")
                 }
+            SheetConfigView()
+                .tabItem {
+                    Label("Settigs", systemImage: "gear")
+                }
         }
         .accentColor(Color(hex: colorHex))
     }
@@ -34,4 +38,5 @@ struct HomeView: View {
 #Preview {
     HomeView()
         .modelContainer(for: TaskItem.self)
+        .environmentObject(WorkViewModel())
 }

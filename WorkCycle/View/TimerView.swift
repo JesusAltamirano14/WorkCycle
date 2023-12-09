@@ -16,67 +16,116 @@ struct TimerView: View {
     
     @State private var color: Color = .blue
     
+    @State private var workItem: TaskItem = TaskItem()
+    @Environment(\.modelContext) private var modelContext
+    
     private var totalSeconds: Int {
         return (hours * 3600 + minutes * 60 + seconds)
     }
     
     @AppStorage("totalSecondsPicker") private var totalSecondsPicker: Int = 0
-
+    
+    @EnvironmentObject private var workVM: WorkViewModel
+    
+    ///
+    @State private var sliderValue: Double = 0
+    ///
+    
     var body: some View {
-        VStack {
-            Text("Jesus Altamirano")
-            Text(String(describing: timerVM.timeStart))
-            Text(String(timerVM.elapsedTime))
-            Text("secondsFinal: \(timerVM.secondsFinal)")
-            Text("ProgressRing: \(timerVM.progressRing)")
-            Text("Reamining Time: \(timerVM.remainingTime)")
-            Text("totalSeconds: \(totalSeconds)")
-            ColorPicker("Color", selection: $color)
-            
-                if timerVM.timeStart != nil {
-                        RingView()
-                }else{
-                        TimePickerView()
-                }
-            
-            //MARK: BUTTONS START AND STOP
-            
-            if timerVM.timeStart == nil {
-                Button("Start"){
-                    //MARK: START THE TIMER
-                    //Introduce the current Date to the UserDefaults and to the state
-                    let newDate = Date()
-                    UserDefaults.standard.set(newDate, forKey: "timeStart")
-                    
-                    //Make Animation for View changes
-                    withAnimation {
-                        timerVM.timeStart = newDate
-                    }
-                    //Initialize the timer
-                    if timerVM.timer == nil {
-                        timerVM.startTimer()
+        NavigationStack {
+            VStack(alignment:.leading){
+//                Text("Jesus Altamirano")
+//                Text(String(describing: timerVM.timeStart))
+//                Text(String(timerVM.elapsedTime))
+//                Text("secondsFinal: \(timerVM.secondsFinal)")
+//                Text("ProgressRing: \(timerVM.progressRing)")
+//                Text("Reamining Time: \(timerVM.remainingTime)")
+//                Text("totalSeconds: \(totalSeconds)")
+//                ColorPicker("Color", selection: $color)
+                
+                ColorPickerWork(typeOfWork: $workItem.typeOfWork, withPrice: true)
+                
+                HStack{
+                    if timerVM.timeStart != nil {
+                            RingView()
+                    }else{
+                            TimePickerView()
                     }
                 }
-                .buttonStyle(.borderedProminent)
-                .tint(.green)
-                .disabled(totalSeconds<=0)
-            }else{
-                Button("Stop"){
-                    //MARK: Stop the timer when the button Stop was pressed
-                    timerVM.stopTimer()
-                    //Removing the date saved in the UserDefaults
-                    UserDefaults.standard.removeObject(forKey: "timeStart")
-                    withAnimation {
-                        timerVM.timeStart = nil
+                .frame(maxWidth: .infinity, alignment: .center)
+                
+                //MARK: BUTTONS START AND STOP
+                
+                HStack{
+                    if timerVM.timeStart == nil {
+                        Button("Start"){
+                            //MARK: START THE TIMER
+                            //Introduce the current Date to the UserDefaults and to the state
+                            let newDate = Date()
+                            workItem.entryHour = newDate
+                            UserDefaults.standard.set(newDate, forKey: "timeStart")
+                            
+                            //Make Animation for View changes
+                            withAnimation {
+                                timerVM.timeStart = newDate
+                            }
+                            //Initialize the timer
+                            if timerVM.timer == nil {
+                                timerVM.startTimer()
+                            }
+                        }
+                        .buttonStyle(.borderedProminent)
+                        .tint(.green)
+                        .disabled(totalSeconds<=0)
+                    }else{
+                        Button(action: {
+                            //MARK: Stop the timer when the button Stop was pressed
+                            
+                            let calendar = Calendar.current
+                            
+                            //Remove seconds to entry Hour
+                            let newEntryHourComponents = calendar.dateComponents([.year,.month,.day,.hour,.minute], from: workItem.entryHour)
+                            let newEntryHourWithoutSeconds = calendar.date(from: newEntryHourComponents) ?? workItem.entryHour
+                            workItem.entryHour = newEntryHourWithoutSeconds
+                            
+                            let newDateExit = Date()
+                            //Remove seconds to exit Hour
+                            let newExitHourComponents = calendar.dateComponents([.year,.month,.day,.hour,.minute], from: newDateExit)
+                            let newExitHourWithoutSeconds = calendar.date(from: newExitHourComponents) ?? newDateExit
+                            workItem.exitHour = newExitHourWithoutSeconds
+                            
+                            modelContext.insert(workItem)
+                            
+                            timerVM.stopTimer()
+                            //Removing the entryHourDate saved in the UserDefaults
+                            UserDefaults.standard.removeObject(forKey: "timeStart")
+                            withAnimation {
+                                timerVM.timeStart = nil
+                            }
+                            //Reset the times
+                            timerVM.elapsedTime = 0
+                            timerVM.remainingTime = 0
+                            timerVM.progressRing = 0
+                            
+                            //New instance is created in order to permit save other TaskItem
+                            workItem = TaskItem()
+                        }, label: {
+                            Text("EXIT")
+                                .foregroundStyle(.white)
+                        })
+                        .frame(width: 70, height: 70)
+                        .background(
+                            Circle()
+                                .fill(.red)
+                        )
                     }
-                    //Reset the times
-                    timerVM.elapsedTime = 0
-                    timerVM.remainingTime = 0
-                    timerVM.progressRing = 0
                 }
-                .buttonStyle(.borderedProminent)
-                .tint(.red)
+                .frame(maxWidth: .infinity, alignment: .center)
             }
+            .padding(.horizontal)
+            .padding(.top)
+            .frame(maxHeight: .infinity, alignment: .top)
+            .navigationTitle(Date().formatDate(template: "dd MMMM"))
 
         }
         .onAppear {
@@ -197,4 +246,6 @@ struct TimerView: View {
 
 #Preview {
     TimerView()
+        .environmentObject(WorkViewModel())
+        .modelContainer(for: TaskItem.self)
 }

@@ -32,35 +32,14 @@ struct EditWorkView: View {
             Text(Calendar.current.startOfDay(for: workItem.entryHour).formatDate(template: "MMMM dd"))
                 .font(.title)
             
-            //MARK: COLORS
+            //MARK: COLORS - COMPONENTS
             
-            VStack(alignment: .leading){
-                Text(workItem.typeOfWork.descr)
-                    .foregroundStyle(.secondary)
-                HStack{
-                    ForEach(TypeOfWork.allCases, id: \.self) { type in
-                        ZStack{
-                            if type ==  workItem.typeOfWork{
-                                Circle()
-                                    .frame(width: 52, height: 52)
-                            }
-//
-                            Color(type.rawValue)
-                                .clipShape(Circle())
-                                .frame(width: 50, height: 50)
-                                .onTapGesture {
-                                    workItem.typeOfWork = type
-                                }
-                        }
-                    }
-                }
-            }
+            ColorPickerWork(typeOfWork: $workItem.typeOfWork, withPrice: false)
+            
             DatePicker("entry", selection: $workItem.entryHour, displayedComponents: .hourAndMinute)
             DatePicker("exit", selection: $workItem.exitHour,in: workItem.entryHour... ,displayedComponents: .hourAndMinute)
             //MARK: BUTTON TO SAVE WORKS
             Button(action: {
-//                let newTaskItem = TaskItem(id: taskItem.id, entryHour: selectedEntryHour, exitHour: selectedExitHour, typeOfWork: selectedType)
-//                modelContext.insert(newTaskItem)
                 dismiss()
             }, label: {
                 Text("Edit")
@@ -71,7 +50,7 @@ struct EditWorkView: View {
                     .foregroundStyle(.black)
                     .background(
                         RoundedRectangle(cornerRadius: 10)
-                            .fill(Color(workItem.typeOfWork.rawValue))
+                            .fill(Color(hex:workItem.typeOfWork.rawValue))
                     )
             })
             .padding(.top, 22)
@@ -79,6 +58,7 @@ struct EditWorkView: View {
     }
 }
 
-//#Preview {
-//    EditWorkView()
-//}
+#Preview {
+    EditWorkView(workItem: TaskItem(id: "jesus", entryHour: Date(), exitHour: Date(), typeOfWork: .work1, phase: .phase1))
+        .environmentObject(WorkViewModel())
+}

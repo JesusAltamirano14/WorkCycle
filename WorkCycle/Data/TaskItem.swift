@@ -35,9 +35,9 @@ final class TaskItem{
 }
 
 enum TypeOfWork: String, CaseIterable, Codable, Identifiable {
-    case work1 = "green"
-    case work2 = "blue"
-    case work3 = "yellow"
+    case work1 = "#C4FF97"
+    case work2 = "#ABCCFF"
+    case work3 = "#FDFFA8"
     
     var id: String {
         rawValue

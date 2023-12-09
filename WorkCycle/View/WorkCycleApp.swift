@@ -10,6 +10,9 @@ import SwiftData
 
 @main
 struct WorkCycleApp: App {
+    
+    @StateObject var workVM: WorkViewModel = WorkViewModel()
+    
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
             TaskItem.self,
@@ -31,6 +34,7 @@ struct WorkCycleApp: App {
         
         WindowGroup {
             HomeView()
+                .environmentObject(workVM)
         }
         .modelContainer(sharedModelContainer)
     }
