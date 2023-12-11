@@ -80,6 +80,9 @@
         }
       }
     },
+    "CANCEL" : {
+
+    },
     "Color" : {
 
     },
@@ -148,9 +151,6 @@
           }
         }
       }
-    },
-    "EXIT" : {
-
     },
     "Extra Time" : {
       "localizations" : {

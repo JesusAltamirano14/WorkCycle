@@ -10,8 +10,8 @@ import SwiftUI
 struct SheetConfigView: View {
     
     @AppStorage("colorTheme") private var colorTheme: String = "#00CC00"
-    @AppStorage("colorRing1") private var colorRing1: String = "#00CC00"
-    @AppStorage("colorRing2") private var colorRing2: String = "#00CC00"
+    @AppStorage("colorRing1") private var colorRing1: String = "#0096FF"
+    @AppStorage("colorRing2") private var colorRing2: String = "#9437FF"
     
     @State private var colorThemePicker: Color
     @State private var colorRing1Picker: Color

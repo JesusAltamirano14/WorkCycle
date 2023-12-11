@@ -13,23 +13,22 @@ struct TimerView: View {
     @State private var hours: Int = 0
     @State private var minutes: Int = 0
     @State private var seconds: Int = 0
+    @State private var disableButton: Bool = true
     
     @State private var color: Color = .blue
     
     @State private var workItem: TaskItem = TaskItem()
     @Environment(\.modelContext) private var modelContext
     
-    private var totalSeconds: Int {
-        return (hours * 3600 + minutes * 60 + seconds)
-    }
-    
     @AppStorage("totalSecondsPicker") private var totalSecondsPicker: Int = 0
+    @AppStorage("colorRing1") private var colorRing1: String = "#0096FF"
+    @AppStorage("colorRing2") private var colorRing2: String = "#9437FF"
     
     @EnvironmentObject private var workVM: WorkViewModel
     
-    ///
-    @State private var sliderValue: Double = 0
-    ///
+    private var totalSeconds: Int {
+        return (hours * 3600 + minutes * 60 + seconds)
+    }
     
     var body: some View {
         NavigationStack {
@@ -76,8 +75,12 @@ struct TimerView: View {
                             //Vibration
                             HapticManager.instance.notificationVibrate(type: .success)
                         }
-                        .buttonStyle(.borderedProminent)
-                        .tint(.green)
+                        .frame(width: 80, height: 80)
+                        .background(
+                            Circle()
+                                .fill(disableButton ? .gray.opacity(0.7) : .green)
+                        )
+                        .foregroundStyle(.white)
                         .disabled(totalSeconds<=0)
                     }else{
                         Button(action: {
@@ -111,15 +114,41 @@ struct TimerView: View {
                             
                             //New instance is created in order to permit save other TaskItem and mantain the previous TypeOfWork
                             workItem = TaskItem(typeOfWork: workItem.typeOfWork)
-                            HapticManager.instance.notificationVibrate(type: .error)
+                            HapticManager.instance.notificationVibrate(type: .success)
                         }, label: {
-                            Text("EXIT")
+                            Text("SAVE")
                                 .foregroundStyle(.white)
                         })
-                        .frame(width: 70, height: 70)
+                        .frame(width: 80, height: 80)
                         .background(
                             Circle()
                                 .fill(.red)
+                        )
+                        Button(action: {
+                            //MARK: Stop the timer when the button Stop is pressed
+                            
+                            timerVM.stopTimer()
+                            //Removing the entryHourDate saved in the UserDefaults
+                            UserDefaults.standard.removeObject(forKey: "timeStart")
+                            withAnimation {
+                                timerVM.timeStart = nil
+                            }
+                            
+                            //Reset the times
+                            timerVM.elapsedTime = 0
+                            timerVM.remainingTime = 0
+                            timerVM.progressRing = 0
+
+                            //Vibration
+                            HapticManager.instance.notificationVibrate(type: .error)
+                        }, label: {
+                            Text("CANCEL")
+                                .foregroundStyle(.white)
+                        })
+                        .frame(width: 80, height: 80)
+                        .background(
+                            Circle()
+                                .fill(.gray)
                         )
                     }
                 }
@@ -132,24 +161,31 @@ struct TimerView: View {
 
         }
         .onAppear {
-                    NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: .main) { _ in
-                        timerVM.stopTimer()
-                    }
+            if totalSeconds <= 0 {
+                disableButton = true
+            }
+            NotificationCenter.default.addObserver(forName: UIApplication.didEnterBackgroundNotification, object: nil, queue: .main) { _ in
+                timerVM.stopTimer()
+            }
 
-                    NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { _ in
-                        timerVM.loadSavedDateToStartTimer()
-                    }
+            NotificationCenter.default.addObserver(forName: UIApplication.willEnterForegroundNotification, object: nil, queue: .main) { _ in
+                timerVM.loadSavedDateToStartTimer()
+            }
                 }
         .onDisappear {
-                   NotificationCenter.default.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
-                   NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
+           NotificationCenter.default.removeObserver(self, name: UIApplication.didEnterBackgroundNotification, object: nil)
+           NotificationCenter.default.removeObserver(self, name: UIApplication.willEnterForegroundNotification, object: nil)
                }
         .onChange(of: totalSeconds) { oldValue, newValue in
             //Update the AppStorage
             totalSecondsPicker = newValue
             //Update the property secondsFinal
             timerVM.secondsFinal = newValue
-            print("\(totalSecondsPicker)")
+            if totalSeconds <= 0 {
+                disableButton =  true
+            }else {
+                disableButton = false
+            }
         }
     }
 
@@ -165,7 +201,7 @@ struct TimerView: View {
             Circle()
                 .trim(from: 0.0,to: min(timerVM.progressRing,1.0))
                 .stroke(
-                    AngularGradient(colors: [color,Color(.purple)], center: .center),
+                    AngularGradient(colors: [Color(hex: colorRing1),Color(hex:colorRing2)], center: .center),
                     style: StrokeStyle(lineWidth: 15,lineCap: .round, lineJoin: .round))
                 .rotationEffect(Angle(degrees: 270.0))
                 .animation(.easeInOut(duration: 1.0), value: timerVM.progressRing)
