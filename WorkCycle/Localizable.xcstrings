@@ -60,6 +60,9 @@
         }
       }
     },
+    "Are you sure ?" : {
+
+    },
     "Calculate" : {
       "localizations" : {
         "es" : {
@@ -292,6 +295,9 @@
           }
         }
       }
+    },
+    "Stop timer" : {
+
     },
     "Theme color" : {
 

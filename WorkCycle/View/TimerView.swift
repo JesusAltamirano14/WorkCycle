@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AlertKit
 
 struct TimerView: View {
     
@@ -14,8 +15,8 @@ struct TimerView: View {
     @State private var minutes: Int = 0
     @State private var seconds: Int = 0
     @State private var disableButton: Bool = true
-    
-    @State private var color: Color = .blue
+    @State private var showAlertToSave: Bool = false
+    @State private var showAlertRing: Bool = false
     
     @State private var workItem: TaskItem = TaskItem()
     @Environment(\.modelContext) private var modelContext
@@ -29,6 +30,8 @@ struct TimerView: View {
     private var totalSeconds: Int {
         return (hours * 3600 + minutes * 60 + seconds)
     }
+    
+    let alertToSave = AlertAppleMusic17View(title: "Added to calendar", subtitle: nil, icon: .done)
     
     var body: some View {
         NavigationStack {
@@ -82,6 +85,7 @@ struct TimerView: View {
                         )
                         .foregroundStyle(.white)
                         .disabled(totalSeconds<=0)
+                        .alert(isPresent: $showAlertToSave, view: alertToSave)
                     }else{
                         Button(action: {
                             //MARK: Stop the timer when the button Stop was pressed
@@ -115,6 +119,7 @@ struct TimerView: View {
                             //New instance is created in order to permit save other TaskItem and mantain the previous TypeOfWork
                             workItem = TaskItem(typeOfWork: workItem.typeOfWork)
                             HapticManager.instance.notificationVibrate(type: .success)
+                            showAlertToSave = true
                         }, label: {
                             Text("SAVE")
                                 .foregroundStyle(.white)
@@ -122,33 +127,39 @@ struct TimerView: View {
                         .frame(width: 80, height: 80)
                         .background(
                             Circle()
-                                .fill(.red)
+                                .fill(.blue)
                         )
                         Button(action: {
-                            //MARK: Stop the timer when the button Stop is pressed
-                            
-                            timerVM.stopTimer()
-                            //Removing the entryHourDate saved in the UserDefaults
-                            UserDefaults.standard.removeObject(forKey: "timeStart")
-                            withAnimation {
-                                timerVM.timeStart = nil
-                            }
-                            
-                            //Reset the times
-                            timerVM.elapsedTime = 0
-                            timerVM.remainingTime = 0
-                            timerVM.progressRing = 0
-
-                            //Vibration
-                            HapticManager.instance.notificationVibrate(type: .error)
+                            showAlertRing = true
                         }, label: {
                             Text("CANCEL")
                                 .foregroundStyle(.white)
                         })
+                        .alert("Are you sure you want to stop the timer?", isPresented: $showAlertRing, actions: {
+                            Button("Stop timer", role: .destructive) {
+                                //MARK: Stop the timer when the button Stop is pressed
+                                
+                                timerVM.stopTimer()
+                                
+                                //Removing the entryHourDate saved in the UserDefaults
+                                UserDefaults.standard.removeObject(forKey: "timeStart")
+                                withAnimation {
+                                    timerVM.timeStart = nil
+                                }
+                                
+                                //Reset the times
+                                timerVM.elapsedTime = 0
+                                timerVM.remainingTime = 0
+                                timerVM.progressRing = 0
+
+                                //Vibration
+                                HapticManager.instance.notificationVibrate(type: .error)
+                            }
+                        })
                         .frame(width: 80, height: 80)
                         .background(
                             Circle()
-                                .fill(.gray)
+                                .fill(.red)
                         )
                     }
                 }

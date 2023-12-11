@@ -13,6 +13,7 @@ struct CounterView: View {
     @Query private var taskItems: [TaskItem]
     @FocusState private var isInputActive: Bool
     @EnvironmentObject private var workVM: WorkViewModel
+    @State private var showAlert: Bool = false
     
     init() {
         let predicate = #Predicate<TaskItem> {
@@ -78,14 +79,7 @@ struct CounterView: View {
                         .font(.title2)
                         .fontWeight(.semibold)
                     Button {
-                        if !taskItems.isEmpty {
-                            for task in taskItems {
-                                task.phase = .phase3
-                                task.phaseId = 3
-                            }
-                        }
-                        //Vibration
-                        HapticManager.instance.notificationVibrate(type: .success)
+                        showAlert =  true
                     } label: {
                         Text("SAVE")
                             .font(.footnote)
@@ -95,20 +89,21 @@ struct CounterView: View {
                     .frame(maxWidth: .infinity, alignment: .center)
                     .buttonStyle(.borderedProminent)
                     .padding()
-                }
-                .padding()
-                .navigationTitle("Calculate")
-                //Adding the button Done
-                .toolbar{
-                    ToolbarItemGroup(placement:.keyboard){
-                        Spacer()
-                        Button {
-                            isInputActive = false
-                        } label: {
-                            Text("Done")
+                    .alert("Are you sure you want to save this data?", isPresented: $showAlert) {
+                        Button("Save data", role: .destructive) {
+                            if !taskItems.isEmpty {
+                                for task in taskItems {
+                                    task.phase = .phase3
+                                    task.phaseId = 3
+                                }
+                            }
+                            //Vibration
+                            HapticManager.instance.notificationVibrate(type: .success)
                         }
                     }
                 }
+                .padding()
+                .navigationTitle("Calculate")
             }
         }
         .overlay {
