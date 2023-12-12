@@ -30,21 +30,11 @@ struct TimerView: View {
     private var totalSeconds: Int {
         return (hours * 3600 + minutes * 60 + seconds)
     }
-    
-    let alertToSave = AlertAppleMusic17View(title: "Added to calendar", subtitle: nil, icon: .done)
+    var alertToSave = AlertAppleMusic17View(title: LocalizedStringResource("Added to calendar").key, subtitle: nil, icon: .done)
     
     var body: some View {
         NavigationStack {
             VStack(alignment:.leading){
-//                Text("Jesus Altamirano")
-//                Text(String(describing: timerVM.timeStart))
-//                Text(String(timerVM.elapsedTime))
-//                Text("secondsFinal: \(timerVM.secondsFinal)")
-//                Text("ProgressRing: \(timerVM.progressRing)")
-//                Text("Reamining Time: \(timerVM.remainingTime)")
-//                Text("totalSeconds: \(totalSeconds)")
-//                ColorPicker("Color", selection: $color)
-                
                 ColorPickerWork(typeOfWork: $workItem.typeOfWork, withPrice: true)
                 
                 HStack{
@@ -60,7 +50,7 @@ struct TimerView: View {
                 
                 HStack{
                     if timerVM.timeStart == nil {
-                        Button("Start"){
+                        Button {
                             //MARK: START THE TIMER
                             //Introduce the current Date to the UserDefaults and to the state
                             let newDate = Date()
@@ -77,13 +67,16 @@ struct TimerView: View {
                             }
                             //Vibration
                             HapticManager.instance.notificationVibrate(type: .success)
+                        } label: {
+                            Text("Start")
+                                .frame(width: 80, height: 80)
+                                .padding(5)
+                                .background(
+                                    Circle()
+                                        .fill(disableButton ? .gray.opacity(0.7) : .green)
+                                )
+                                .foregroundStyle(.white)
                         }
-                        .frame(width: 80, height: 80)
-                        .background(
-                            Circle()
-                                .fill(disableButton ? .gray.opacity(0.7) : .green)
-                        )
-                        .foregroundStyle(.white)
                         .disabled(totalSeconds<=0)
                         .alert(isPresent: $showAlertToSave, view: alertToSave)
                     }else{
@@ -122,18 +115,26 @@ struct TimerView: View {
                             showAlertToSave = true
                         }, label: {
                             Text("SAVE")
+                                .frame(width: 80, height: 80)
+                                .padding(5)
+                                .background(
+                                    Circle()
+                                        .fill(.blue)
+                                )
                                 .foregroundStyle(.white)
                         })
-                        .frame(width: 80, height: 80)
-                        .background(
-                            Circle()
-                                .fill(.blue)
-                        )
+                        
                         Button(action: {
                             showAlertRing = true
                         }, label: {
                             Text("CANCEL")
                                 .foregroundStyle(.white)
+                                .frame(width: 80, height: 80)
+                                .padding(5)
+                                .background(
+                                    Circle()
+                                        .fill(.red)
+                                )
                         })
                         .alert("Are you sure you want to stop the timer?", isPresented: $showAlertRing, actions: {
                             Button("Stop timer", role: .destructive) {
@@ -156,11 +157,6 @@ struct TimerView: View {
                                 HapticManager.instance.notificationVibrate(type: .error)
                             }
                         })
-                        .frame(width: 80, height: 80)
-                        .background(
-                            Circle()
-                                .fill(.red)
-                        )
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .center)

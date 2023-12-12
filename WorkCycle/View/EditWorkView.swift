@@ -14,6 +14,17 @@ struct EditWorkView: View {
     
     @Bindable var workItem: TaskItem
     
+    @State private var entryHourPicker: Date
+    @State private var exitHourPicker: Date
+    @State private var typeOfWorkPicker: TypeOfWork
+    
+    init(workItem: TaskItem){
+        self.workItem = workItem
+        self._entryHourPicker = State(initialValue: workItem.entryHour)
+        self._exitHourPicker = State(initialValue: workItem.exitHour)
+        self._typeOfWorkPicker = State(initialValue: workItem.typeOfWork)
+    }
+    
     var body: some View {
         Form {
             //MARK: TITTLE
@@ -23,12 +34,15 @@ struct EditWorkView: View {
             
             //MARK: COLORS - COMPONENTS
             
-            ColorPickerWork(typeOfWork: $workItem.typeOfWork, withPrice: false)
+            ColorPickerWork(typeOfWork: $typeOfWorkPicker, withPrice: false)
             
-            DatePicker("entry", selection: $workItem.entryHour, displayedComponents: .hourAndMinute)
-            DatePicker("exit", selection: $workItem.exitHour,in: workItem.entryHour... ,displayedComponents: .hourAndMinute)
+            DatePicker("entry", selection: $entryHourPicker, displayedComponents: .hourAndMinute)
+            DatePicker("exit", selection: $exitHourPicker,in: entryHourPicker... ,displayedComponents: .hourAndMinute)
             //MARK: BUTTON TO SAVE WORKS
             Button(action: {
+                workItem.entryHour = entryHourPicker
+                workItem.exitHour = exitHourPicker
+                workItem.typeOfWork = typeOfWorkPicker
                 dismiss()
             }, label: {
                 Text("Edit")

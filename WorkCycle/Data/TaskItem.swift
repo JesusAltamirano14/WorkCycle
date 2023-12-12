@@ -44,14 +44,14 @@ enum TypeOfWork: String, CaseIterable, Codable, Identifiable {
     }
 }
 extension TypeOfWork {
-    var descr: String {
+    var descr: LocalizedStringResource {
         switch self {
         case .work1:
-            return "Work 1"
+            return "Job 1"
         case .work2:
-            return "Work 2"
+            return "Job 2"
         case .work3:
-            return "Work 3"
+            return "Job 3"
         }
     }
 }

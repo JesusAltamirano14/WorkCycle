@@ -9,33 +9,33 @@ import Foundation
 
 
 class WorkViewModel: ObservableObject {
-    @Published var colorWork1: String = UserDefaults.standard.string(forKey: TypeOfWork.work1.descr) ?? TypeOfWork.work1.rawValue
-    @Published var colorWork2: String = UserDefaults.standard.string(forKey: TypeOfWork.work2.descr) ?? TypeOfWork.work2.rawValue
-    @Published var colorWork3: String = UserDefaults.standard.string(forKey: TypeOfWork.work3.descr) ?? TypeOfWork.work3.rawValue
+    @Published var colorWork1: String = UserDefaults.standard.string(forKey: TypeOfWork.work1.descr.key) ?? TypeOfWork.work1.rawValue
+    @Published var colorWork2: String = UserDefaults.standard.string(forKey: TypeOfWork.work2.descr.key) ?? TypeOfWork.work2.rawValue
+    @Published var colorWork3: String = UserDefaults.standard.string(forKey: TypeOfWork.work3.descr.key) ?? TypeOfWork.work3.rawValue
     
-    @Published var priceWork1: Float = UserDefaults.standard.float(forKey: "price\(TypeOfWork.work1.descr)")
-    @Published var priceWork2: Float = UserDefaults.standard.float(forKey: "price\(TypeOfWork.work2.descr)")
-    @Published var priceWork3: Float = UserDefaults.standard.float(forKey: "price\(TypeOfWork.work3.descr)")
+    @Published var priceWork1: Float = UserDefaults.standard.float(forKey: "price\(TypeOfWork.work1.descr.key)")
+    @Published var priceWork2: Float = UserDefaults.standard.float(forKey: "price\(TypeOfWork.work2.descr.key)")
+    @Published var priceWork3: Float = UserDefaults.standard.float(forKey: "price\(TypeOfWork.work3.descr.key)")
     
-    @Published var nameWork1: String = UserDefaults.standard.string(forKey: "name\(TypeOfWork.work1.descr)") ?? TypeOfWork.work1.descr
-    @Published var nameWork2: String = UserDefaults.standard.string(forKey: "name\(TypeOfWork.work2.descr)") ?? TypeOfWork.work2.descr
-    @Published var nameWork3: String = UserDefaults.standard.string(forKey: "name\(TypeOfWork.work3.descr)") ?? TypeOfWork.work3.descr
+    @Published var nameWork1: String = UserDefaults.standard.string(forKey: "name\(TypeOfWork.work1.descr.key)") ?? TypeOfWork.work1.descr.key
+    @Published var nameWork2: String = UserDefaults.standard.string(forKey: "name\(TypeOfWork.work2.descr.key)") ?? TypeOfWork.work2.descr.key
+    @Published var nameWork3: String = UserDefaults.standard.string(forKey: "name\(TypeOfWork.work3.descr.key)") ?? TypeOfWork.work3.descr.key
     
     
 
     
     func saveColorIntoStorage(type:TypeOfWork, dataToSave data: String) -> Void {
-        UserDefaults.standard.set(data, forKey: type.descr)
+        UserDefaults.standard.set(data, forKey: type.descr.key)
         updateColor(type: type, data: data)
     }
     
     func savePriceIntoStorage(type:TypeOfWork, priceToSave price: Float) -> Void {
-        UserDefaults.standard.set(price, forKey: "price\(type.descr)")
+        UserDefaults.standard.set(price, forKey: "price\(type.descr.key)")
         updatePrice(type: type, price: price)
     }
     
     func saveNameIntoStorage(type:TypeOfWork, nameToSave name: String) -> Void {
-        UserDefaults.standard.set(name, forKey: "name\(type.descr)")
+        UserDefaults.standard.set(name, forKey: "name\(type.descr.key)")
         updateName(type: type, name: name)
     }
     

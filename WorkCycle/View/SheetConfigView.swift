@@ -27,7 +27,7 @@ struct SheetConfigView: View {
     var body: some View {
         NavigationStack{
             List{
-                Section(header: Text("Colores")) {
+                Section(header: Text("Colors")) {
                     ColorPicker("Theme color", selection: $colorThemePicker)
                     ColorPicker("Ring Color 1", selection: $colorRing1Picker)
                     ColorPicker("Ring Color 2", selection: $colorRing2Picker)

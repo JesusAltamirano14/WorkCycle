@@ -130,7 +130,7 @@ struct TaskView: View {
                         Image(systemName: "tray.and.arrow.down")
                             .resizable()
                             .frame(width: 38, height: 35)
-                        Text("No work founded")
+                        Text("No job founded")
                             .font(.callout)
                     }
     

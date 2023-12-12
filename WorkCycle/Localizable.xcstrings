@@ -2,7 +2,14 @@
   "sourceLanguage" : "en",
   "strings" : {
     "/ HOUR" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "/ HORA"
+          }
+        }
+      }
     },
     "%@" : {
 
@@ -50,6 +57,16 @@
         }
       }
     },
+    "Added to calendar" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadido al calendario"
+          }
+        }
+      }
+    },
     "already counted" : {
       "localizations" : {
         "es" : {
@@ -60,8 +77,25 @@
         }
       }
     },
-    "Are you sure ?" : {
-
+    "Are you sure you want to save this data?" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta seguro que desea guardar los trabajos?"
+          }
+        }
+      }
+    },
+    "Are you sure you want to stop the timer?" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta seguro que desea detener el temporizador?"
+          }
+        }
+      }
     },
     "Calculate" : {
       "localizations" : {
@@ -84,16 +118,44 @@
       }
     },
     "CANCEL" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "DETENER"
+          }
+        }
+      }
     },
     "Color" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color"
+          }
+        }
+      }
     },
-    "Colores" : {
-
+    "Colors" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colores"
+          }
+        }
+      }
     },
     "Configuration" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configuracion"
+          }
+        }
+      }
     },
     "Delete" : {
       "localizations" : {
@@ -106,6 +168,7 @@
       }
     },
     "Done" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -176,7 +239,14 @@
       }
     },
     "Hours" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Horas"
+          }
+        }
+      }
     },
     "Information" : {
       "localizations" : {
@@ -188,8 +258,55 @@
         }
       }
     },
+    "Job 1" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trabajo 1"
+          }
+        }
+      }
+    },
+    "Job 2" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trabajo 2"
+          }
+        }
+      }
+    },
+    "Job 3" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trabajo 3"
+          }
+        }
+      }
+    },
     "JOBS" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TRABAJOS"
+          }
+        }
+      }
+    },
+    "Jobs to be counted" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trabajos para ser contados"
+          }
+        }
+      }
     },
     "min" : {
       "localizations" : {
@@ -202,15 +319,40 @@
       }
     },
     "Minutes" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minutos"
+          }
+        }
+      }
     },
     "Name of The" : {
 
     },
     "Name: " : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre:"
+          }
+        }
+      }
+    },
+    "No job founded" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ningún trabajo encontrado"
+          }
+        }
+      }
     },
     "No work founded" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {
@@ -241,10 +383,24 @@
       }
     },
     "Ring Color 1" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color de anillo 1"
+          }
+        }
+      }
     },
     "Ring Color 2" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color de anillo 2"
+          }
+        }
+      }
     },
     "Save" : {
       "localizations" : {
@@ -257,7 +413,24 @@
       }
     },
     "SAVE" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GUARDAR"
+          }
+        }
+      }
+    },
+    "Save data" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar"
+          }
+        }
+      }
     },
     "sec" : {
       "localizations" : {
@@ -270,10 +443,24 @@
       }
     },
     "Seconds" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Segundos"
+          }
+        }
+      }
     },
     "Settigs" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configuracion"
+          }
+        }
+      }
     },
     "Start" : {
       "localizations" : {
@@ -297,10 +484,24 @@
       }
     },
     "Stop timer" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detener temporizador"
+          }
+        }
+      }
     },
     "Theme color" : {
-
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color de tema"
+          }
+        }
+      }
     },
     "This section is empty" : {
       "localizations" : {
@@ -323,6 +524,7 @@
       }
     },
     "Works to be counted" : {
+      "extractionState" : "stale",
       "localizations" : {
         "es" : {
           "stringUnit" : {

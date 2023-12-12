@@ -29,7 +29,7 @@ struct CounterView: View {
         NavigationStack{
             if !taskItems.isEmpty {
                 List {
-                    Section(header: Text("Works to be counted")){
+                    Section(header: Text("Jobs to be counted")){
                         ForEach(taskItems) { task in
                             HStack(spacing: 6){
                                 VStack(alignment:.leading){
@@ -40,6 +40,8 @@ struct CounterView: View {
                                 }
                                 Spacer()
                                 VStack(alignment:.trailing){
+                                    Text("\(String(format: "%.2f$ / HOUR", workVM.getPrice(type: task.typeOfWork)))")
+                                        .foregroundStyle(.secondary)
                                     HStack{
                                         Image(systemName: "timer")
                                         Text(task.entryHour.calculateTime(to: task.exitHour))
@@ -144,7 +146,6 @@ struct CounterView: View {
         
         return "Total time: \(totalHours) hours - \(totalMinutes) min"
     }
-    
 }
 
 #Preview {
