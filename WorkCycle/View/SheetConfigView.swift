@@ -70,7 +70,7 @@ struct ConfigViewSecond: View {
             Form{
                 HStack{
                     Text("Name: ")
-                    TextField("Name of The", text:$nameField)
+                    TextField("Name of the job", text:$nameField)
                         .textFieldStyle(.roundedBorder)
                         .foregroundStyle(.gray)
                 }

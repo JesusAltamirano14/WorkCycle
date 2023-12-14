@@ -8,6 +8,12 @@
             "state" : "translated",
             "value" : "/ HORA"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "/ HORA"
+          }
         }
       }
     },
@@ -34,12 +40,24 @@
             "state" : "translated",
             "value" : "Añadir"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadir"
+          }
         }
       }
     },
     "Add jobs in calendar to appear here" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añade trabajos para que aparezcan aqui"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Añade trabajos para que aparezcan aqui"
@@ -54,12 +72,24 @@
             "state" : "translated",
             "value" : "Añadido para ser contado"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadido para ser contado"
+          }
         }
       }
     },
     "Added to calendar" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Añadido al calendario"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Añadido al calendario"
@@ -72,7 +102,13 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ya contado"
+            "value" : "ya contado"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ya contado"
           }
         }
       }
@@ -80,6 +116,12 @@
     "Are you sure you want to save this data?" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta seguro que desea guardar los trabajos?"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Esta seguro que desea guardar los trabajos?"
@@ -94,12 +136,24 @@
             "state" : "translated",
             "value" : "Esta seguro que desea detener el temporizador?"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta seguro que desea detener el temporizador?"
+          }
         }
       }
     },
     "Calculate" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calcular"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Calcular"
@@ -114,6 +168,12 @@
             "state" : "translated",
             "value" : "Calendario"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Calendario"
+          }
         }
       }
     },
@@ -122,7 +182,13 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "DETENER"
+            "value" : "Cancelar"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cancelar"
           }
         }
       }
@@ -130,6 +196,12 @@
     "Color" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Color"
@@ -144,6 +216,12 @@
             "state" : "translated",
             "value" : "Colores"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Colores"
+          }
         }
       }
     },
@@ -154,12 +232,24 @@
             "state" : "translated",
             "value" : "Configuracion"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configuracion"
+          }
         }
       }
     },
     "Delete" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Eliminar"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eliminar"
@@ -185,12 +275,24 @@
             "state" : "translated",
             "value" : "Editar"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Editar"
+          }
         }
       }
     },
     "Elapsed time" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiempo transcurrido"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tiempo transcurrido"
@@ -205,12 +307,24 @@
             "state" : "translated",
             "value" : "entrada"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "entrada"
+          }
         }
       }
     },
     "exit" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "salida"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "salida"
@@ -225,12 +339,24 @@
             "state" : "translated",
             "value" : "Tiempo Extra"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiempo extra"
+          }
         }
       }
     },
     "hour" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "hora"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "hora"
@@ -245,12 +371,24 @@
             "state" : "translated",
             "value" : "Horas"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Horas"
+          }
         }
       }
     },
     "Information" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Informacion"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Informacion"
@@ -265,12 +403,24 @@
             "state" : "translated",
             "value" : "Trabajo 1"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trabajo 1"
+          }
         }
       }
     },
     "Job 2" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trabajo 2"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Trabajo 2"
@@ -285,12 +435,24 @@
             "state" : "translated",
             "value" : "Trabajo 3"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trabajo 3"
+          }
         }
       }
     },
     "JOBS" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TRABAJOS"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "TRABAJOS"
@@ -303,7 +465,13 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Trabajos para ser contados"
+            "value" : "Trabajos a ser contados"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trabajos a ser contados"
           }
         }
       }
@@ -311,6 +479,12 @@
     "min" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "min"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "min"
@@ -325,15 +499,40 @@
             "state" : "translated",
             "value" : "Minutos"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Minutos"
+          }
         }
       }
     },
-    "Name of The" : {
-
+    "Name of the job" : {
+      "localizations" : {
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre del trabajo"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre del trabajo"
+          }
+        }
+      }
     },
     "Name: " : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nombre:"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nombre:"
@@ -344,6 +543,12 @@
     "No job founded" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ningún trabajo encontrado"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ningún trabajo encontrado"
@@ -369,12 +574,24 @@
             "state" : "translated",
             "value" : "Listo para ser contado"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Listo para ser contado"
+          }
         }
       }
     },
     "Remaining time" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tiempo faltante"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tiempo faltante"
@@ -389,12 +606,24 @@
             "state" : "translated",
             "value" : "Color de anillo 1"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color de anillo 1"
+          }
         }
       }
     },
     "Ring Color 2" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color de anillo 2"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Color de anillo 2"
@@ -409,12 +638,24 @@
             "state" : "translated",
             "value" : "Guardar"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar"
+          }
         }
       }
     },
     "SAVE" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GUARDAR"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "GUARDAR"
@@ -429,12 +670,24 @@
             "state" : "translated",
             "value" : "Guardar"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Guardar"
+          }
         }
       }
     },
     "sec" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "seg"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "seg"
@@ -449,6 +702,12 @@
             "state" : "translated",
             "value" : "Segundos"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Segundos"
+          }
         }
       }
     },
@@ -459,12 +718,24 @@
             "state" : "translated",
             "value" : "Configuracion"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Configuracion"
+          }
         }
       }
     },
     "Start" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inicio"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Inicio"
@@ -480,6 +751,12 @@
             "state" : "translated",
             "value" : "Detener"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detener"
+          }
         }
       }
     },
@@ -488,7 +765,13 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Detener temporizador"
+            "value" : "Detener"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Detener"
           }
         }
       }
@@ -496,6 +779,12 @@
     "Theme color" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Color de tema"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Color de tema"
@@ -510,12 +799,24 @@
             "state" : "translated",
             "value" : "Esta sección esta vacia"
           }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Esta sección esta vacia"
+          }
         }
       }
     },
     "Timer" : {
       "localizations" : {
         "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Timer"
+          }
+        },
+        "es-419" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Timer"
@@ -530,6 +831,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Trabajos para ser contados"
+          }
+        },
+        "es-419" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Trabajos a ser contados"
           }
         }
       }
